@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(161, 161, 216);
+}
+.container {
+border: 0px solid;
+padding: 0px 0px;
+overflow: hidden;
+box-sizing: border-box;
+background-color: cornsilk;
+}
+.tab{
+    background-color: rgb(161, 161, 216);
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    background-color: black; 
+    color: blanchedalmond; 
+    float: left;
+    width: 100px; 
+    height: 50px;
+    border: cornsilk;
+}

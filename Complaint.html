@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Complaint Registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		.inputPadding{
+			padding: 3%;
+			width: 100%;
+		}
+		a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+	</style>
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Complaint Registration
+		</div>
+
+<form  action="complaint1.php" method="POST" onsubmit="sayHello()">
+			<div class="form_wrap">
+				<div class="input_wrap" >
+					<label for="dlno">Driving License Number</label>
+					<input class = "inputPadding"type="text" name="dlno" required onchange="checkLicense(this.value)">
+					<small id="licenseError"></small>
+				</div>
+				<div class="input_wrap">
+					<label for="chno">Challan Number</label>
+					<input type="text" name="chno" required>
+				</div>
+				<div class="input_wrap">
+					<label for="name">Name</label>
+					<input type="text" name="name">
+				</div>
+				<div class="input_wrap">
+					<label for="email">Email Address</label>
+					<input type="text" name="email">
+				</div>
+				<div class="input_wrap">
+					<label for="description">Description</label>
+					<input type="textarea" name="description" style="height: 70px; width: 100%;">
+				</div>
+				<div class="input_wrap">
+					<label for="file">Choose File</label>
+					<input type="file" name="file">
+				</div>
+				<div class="input_wrap">
+					<input type="submit" value="Submit" class="submit_btn">
+					<center><p style="padding: 10px;margin: 5px;"><a href="homepage.html">GO TO HOMEPAGE</a></p></center>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="./Complaint1.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challan</title>
+	<link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        #fine{
+    background-color: white;
+    }
+    </style>
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Challan
+		</div>
+        
+
+<form action="challan1.php" method="POST" id = "challanForm">
+			<div class="form_wrap">
+				<div class="input_wrap">
+					<label for="chno">Challan Number</label>
+					<input type="text" name="chno" id = "challanValue" style="color:black;"  required readonly="readonly">
+				</div>
+
+				<div class="input_wrap">
+					<label for="dlno">Driving License Number</label>
+					<input type="text" name="dlno" onchange = "{checkLicense(this.value)}" required>
+          <small id="licError"></small>
+				</div>
+        
+				<div class="input_wrap">
+          <label for="vn">Vehicle Number</label>
+					<input type="text" name="vn" onchange="{checkVNum(this.value)}">
+          <small id="vError"></small>
+				</div>
+				<div class="input_wrap">
+					<label for="dn">Driver Name</label>
+					<input type="text" name="dn">
+				</div>
+				<div class="input_wrap">
+					<label for="phone">Phone Number</label>
+					<input type="tel" name="phone" style="height: 40px; width: 100%;">
+				</div>
+				<div class="input_wrap">
+					<label for="ddate">Date</label>
+					<input type="text" id="todayDate" name="ddate"  readonly="readonly" style="color: black;" >
+				</div>
+				<div class="input_wrap">
+					<label for="Location">Location</label>
+					<input type="text" name="Location">
+				</div>
+				<div class="input_wrap">
+			<label for="vtyp">Violation type</label>
+			<select  onchange="findAmt(this.value)" name = "vitype">
+        <option value="default" onchange="findAmt(this.value)">---Default---</option>
+        <option value="Driving_Without_Helmet"   onchange="findAmt(this.value)">Sec-129-Driving_Without_Helmet</option>
+        <option value="General" onchange="findAmt(this.value)">Sec-177-General</option>
+        <option value="Disobedience_of_orders_of_authorities" onchange="findAmt(this.value)">Sec-179-Disobedience_of_orders_of_authorities</option>
+        <option value="Unauthorized_use_of_vehicles" onchange="findAmt(this.value)">Sec-180-Unauthorized_use_of_vehicles</option>
+        <option value="Driving_without_license" onchange="findAmt(this.value)">Sec-181-Driving_without_license</option>
+        <option value="Driving_at_Overspeed" onchange="findAmt(this.value)">Sec-183-Driving_at_Overspeed</option>
+        <option value="Dangerous_driving_penalty" onchange="findAmt(this.value)">Sec-184-Dangerous_driving_penalty</option>
+        <option value="Druken_Driving" onchange="findAmt(this.value)">Sec-185-Druken_Driving</option>
+        <option value="speeding" onchange="findAmt(this.value)">Sec-189-Speeding/Racing</option>
+        <option value="Vehicle_without_permit" onchange="findAmt(this.value)">Sec-192-Vehicle_without_permit</option>
+        <option value="Overloading" onchange="findAmt(this.value)">Sec-194-Overloading</option>
+        <option value="Overloading_of_passengers" onchange="findAmt(this.value)">Sec-194A-Overloading_of_passengers</option>
+        <option value="Driving_without_wearing_seatbelt" onchange="findAmt(this.value)">Sec-194B-Driving_without_wearing_seatbelt</option>
+        <option value="Overloading_of_two_wheelers" onchange="findAmt(this.value)">Sec-194C-Overloading_of_two_wheelers</option>
+        <option value="Driving_without_Insurance" onchange="findAmt(this.value)">Sec-196-Driving_without_Insurance</option>
+
+        
+    </select>
+    </div>
+    <div class="input_wrap">
+        <label for="fine">Rs.</label>
+        <input type="text" name="fine" value="" id="fine"  readonly="readonly" />
+    </div>
+
+     <!--   <input list="vitype" name="vitype" placeholder="Select Violation Type" size="37">
+        <datalist id="vitype" >
+        <option value="Sec-129-Driving Without Helmet">
+        <option value="Sec-177-General">
+        <option value="Sec-179-Disobedience of orders of authorities">
+        <option value="Sec-180-Unauthorized use of vehicles">
+        <option value="Sec-181-Driving without license">
+        <option value="Sec-183-Driving at Overspeed">
+        <option value="Sec-184-Dangerous driving penalty">
+        <option value="Sec-185-Druken Driving">
+        <option value="Sec-189-Speeding/Racing">
+        <option value="Sec-192-Vehicle without permit">
+        <option value="Sec-194-Overloading">
+        <option value="Sec-194A-Overloading of passengers">
+        <option value="Sec-194B-Driving without wearing seatbelt">
+        <option value="Sec-194C-Overloading of two wheelers">
+        <option value="Sec-196-Driving without Insurance">
+        </datalist>
+        </option></div>
+        <div class="input_wrap">
+        <label for="fine">Fine Amount</label>
+        <input list="fine" name="fine" placeholder="Select Fine Amount" size="18">
+        <datalist id="fine" >
+        <option value="S129-Rs.1000"></option>
+        <option value="S177-Rs.100">
+        <option value="S179-Rs.500">
+        <option value="S180-Rs.1000">
+        <option value="S181-Rs.500">
+        <option value="S183-Rs.400">
+        <option value="S184-Rs.1000">
+        <option value="S185-Rs.2000">
+        <option value="S189-Rs.500">
+        <option value="S192-Rs.2500">
+        <option value="S194-Rs.2000">
+        <option value="S194A-Rs.1000">
+        <option value="S194B-Rs.100">
+        <option value="S194C-Rs.100">
+        <option value="S196-Rs.1000">
+        </datalist></option>-->
+
+				<div class="input_wrap">
+					<input type="submit" value="Generate Challan" class="submit_btn">
+				</div>
+                <div class="input_wrap" >
+        <input type="submit" onclick="logout()" value="Logout" class="submit_btn">
+  </div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="new1.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    function logout() {
+        window.location.href='policelogin.html';
+    }
+</script>

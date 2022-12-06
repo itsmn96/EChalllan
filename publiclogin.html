@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Public login</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Welcome
+		</div>
+<form action="public.php" method="POST" id = 'cform'>
+	<div class="form_wrap">
+						<div class="input_wrap">
+					<label for="dlno">Driving License Number</label>
+					<input type="text" name="dlno" id = "dlno" placeholder="Enter Driving License Number">
+				</div>
+				<!--<div class="input_wrap"><label><center>(OR)</center></label></div>
+				<div class="input_wrap">
+					<label for="chno">Challan Number</label>
+					<input type="text" name="chno" placeholder="Enter Challan Number">
+				</div>-->
+				<div class="input_wrap"><label><center>(OR)</center></label></div>
+
+
+				<div class="input_wrap">
+					<label for="vn">Vehicle Number</label>
+					<input type="text" name="vn" id = 'vn' placeholder="Enter Vehicle Number">
+				</div><br><br>
+						
+					<input type="submit" value="Check" name="check" class="submit_btn">
+					<p  id = "showError" class="showErrors"></p>
+				</div></div></form>
+				<Script src="publicLogin.js"></Script>
+			</body>
+			</html>
